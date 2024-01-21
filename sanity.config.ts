@@ -1,7 +1,7 @@
 // Different environments use different variables
-const projectId = "cmkhprdk";
-  // import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID! ||
-  // import.meta.env.PUBLIC_SANITY_PROJECT_ID!;
+const projectId =
+  import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID! ||
+  import.meta.env.PUBLIC_SANITY_PROJECT_ID!;
 const dataset =
   import.meta.env.PUBLIC_SANITY_STUDIO_DATASET! ||
   import.meta.env.PUBLIC_SANITY_DATASET!;
@@ -35,8 +35,8 @@ import { CommentIcon } from "@sanity/icons";
 export default defineConfig({
 	name: "amybabyz",
 	title: "AmyBabyZ",
-	projectId,
-	dataset,
+	projectId: "cmkhprdk",
+	dataset: "production",
 	plugins: [
 		deskTool({
 			structure: (S) =>
