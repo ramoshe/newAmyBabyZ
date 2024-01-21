@@ -27,8 +27,8 @@ import { BinaryDocumentIcon } from "@sanity/icons";
 import { CommentIcon } from "@sanity/icons";
 
 export default defineConfig({
-	name: "project-name",
-	title: "Project Name",
+	name: "amybabyz",
+	title: "AmyBabyZ",
 	projectId,
 	dataset,
 	plugins: [
@@ -38,7 +38,7 @@ export default defineConfig({
 					.title("Content")
 					.items([
 						S.listItem()
-							.title("Slideshow Images")
+							.title("Slideshow")
 							.icon(ImagesIcon)
 							.child(
 								S.document()

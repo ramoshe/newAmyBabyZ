@@ -1,54 +1,58 @@
-import {defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity';
 
 export default defineType({
-  name: 'shoutouts',
-  title: 'Shoutouts',
-  type: 'document',
-  fields: [
-    defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      validation: (Rule) => Rule.required(),
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    }),
-    ({
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'text',
-      rows: 4,
-    }),
-    defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    }),
-  ],
-  preview: {
-    select: {
-      title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
-    },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
-    },
-  },
-})
+	name: "shoutouts",
+	title: "Shoutouts",
+	type: "document",
+	fields: [
+		{
+			name: "shouts",
+			title: "Shoutouts",
+			type: "array",
+			of: [
+				{
+					type: "object",
+					title: "Shoutout",
+					fields: [
+						{
+							name: "image",
+							type: "image",
+							title: "Image",
+						},
+						{
+							name: "name",
+							title: "Name",
+							type: "string",
+						},
+						{
+							name: "blurb",
+							title: "Blurb",
+							type: "text",
+							rows: 2,
+						},
+						{
+							name: "link",
+							title: "Link",
+							type: "url",
+						},
+						{
+							name: "linktext",
+							title: "Link Text",
+							type: "string",
+						},
+					],
+				},
+			],
+		},
+	],
+	preview: {
+		select: {
+			title: "title",
+		},
+		prepare() {
+			return {
+				title: "Shoutouts",
+			};
+		},
+	},
+});
