@@ -1,7 +1,7 @@
 // Different environments use different variables
-const projectId =
-  import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID! ||
-  import.meta.env.PUBLIC_SANITY_PROJECT_ID!;
+const projectId = "cmkhprdk";
+  // import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID! ||
+  // import.meta.env.PUBLIC_SANITY_PROJECT_ID!;
 const dataset =
   import.meta.env.PUBLIC_SANITY_STUDIO_DATASET! ||
   import.meta.env.PUBLIC_SANITY_DATASET!;
