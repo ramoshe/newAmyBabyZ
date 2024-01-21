@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getShoutouts } from "../utils/sanity";
+
+import HomeButton from "../components/HomeButton.astro";
+
+const content = await getShoutouts();
+---
+
+<Layout title="Shoutouts">
+  <section>
+    <HomeButton />
+    <h1>Shoutouts</h1>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    margin-top: 2em;
+  }
+</style>

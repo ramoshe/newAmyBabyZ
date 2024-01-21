@@ -1,5 +1,25 @@
 ---
+import { Image } from 'astro:assets';
+import AmyBabyZName from '../assets/amybabyz_name.svg?raw';
 ---
 <header>
-    <h1>AmyBabyZ</h1>
+    <Fragment set:html={AmyBabyZName} />
 </header>
+
+<style>
+    header {
+        width: 80%;
+        margin: 2em auto;
+    }
+    @media (min-width: 1000px) {
+        header {
+            width: 60%;
+        }
+    }
+</style>
+
+<style is:inline>
+    svg {
+        fill: var(--primary);
+    }
+</style>

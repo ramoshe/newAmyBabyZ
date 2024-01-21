@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getAbout } from "../utils/sanity";
+
+import HomeButton from "../components/HomeButton.astro";
+
+const content = await getAbout();
+---
+
+<Layout title="About">
+  <HomeButton link="/" text="Home" classes="homebtn" />
+  <section>
+    <h1>About</h1>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    margin-top: 2em;
+  }
+</style>

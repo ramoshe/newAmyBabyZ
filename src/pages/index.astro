@@ -2,11 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import { getImages } from "../utils/sanity";
 
+import Navigation from "../components/Navigation.astro";
+
 const images = await getImages();
 ---
 
 <Layout title="Home">
-  <section>
-    <h1>AmyBabyZ</h1>
-  </section>
+  <Navigation />
 </Layout>

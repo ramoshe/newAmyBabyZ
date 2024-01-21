@@ -1,0 +1,25 @@
+---
+interface Props {
+  link: string;
+  text: string;
+  classes?: string;
+  newtab?: boolean;
+}
+
+const { link, text, classes, newtab } = Astro.props;
+---
+<a href={link} class={classes} target={newtab ? "_blank" : ""}>{text}</a>
+
+<style>
+    a {
+        border: 2px solid var(--accent);
+        border-radius: 5px;
+        padding: 1em 2em;
+        font-size: 1.1em;
+        font-weight: 700;
+        color: var(--accent-light);
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: var(--gray);
+    }
+</style>

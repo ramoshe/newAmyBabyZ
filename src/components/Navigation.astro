@@ -1,0 +1,35 @@
+---
+import Button from "./Button.astro";
+---
+<nav>
+    <div class="nav-container">
+        <Button link="/about" text="About" classes="navbtn" />
+        <Button link="/shoutouts" text="Shoutouts" classes="navbtn" />
+        <Button link="https://merch.amybabyz.com" text="Merch" classes="navbtn" newtab={true} />
+        <Button link="https://trovians.com" text="Trovians" classes="navbtn" newtab={true} />
+    </div>
+</nav>
+
+<style>
+    .nav-container {
+        padding: 1em;
+        height: 25vh;
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+        background-image: url("../assets/paint1.png");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+<style is:inline>
+    .navbtn {
+        margin: 1em;
+        min-width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
