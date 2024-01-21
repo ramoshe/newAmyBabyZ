@@ -22,9 +22,9 @@ import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./schema";
 
-import { HomeIcon } from "@sanity/icons";
+import { ImagesIcon } from "@sanity/icons";
 import { BinaryDocumentIcon } from "@sanity/icons";
-import { GoVideo } from "react-icons/go";
+import { CommentIcon } from "@sanity/icons";
 
 export default defineConfig({
 	name: "project-name",
@@ -39,7 +39,7 @@ export default defineConfig({
 					.items([
 						S.listItem()
 							.title("Slideshow Images")
-							.icon(HomeIcon)
+							.icon(ImagesIcon)
 							.child(
 								S.document()
 									.schemaType("slideshow")
@@ -55,7 +55,7 @@ export default defineConfig({
 							),
 						S.listItem()
 							.title("Shoutouts")
-							.icon(GoVideo)
+							.icon(CommentIcon)
 							.child(
 								S.document()
 									.schemaType("shoutouts")

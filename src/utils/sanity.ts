@@ -1,29 +1,43 @@
 import { useSanityClient } from "@sanity/astro";
 import type { PortableTextBlock } from "@portabletext/types";
-import type { ImageAsset, Slug } from "@sanity/types";
+import type { ImageAsset } from "@sanity/types";
 import groq from "groq";
 
-export async function getPosts(): Promise<Post[]> {
+// SLIDESHOW
+export async function getImages(): Promise<slideshow> {
   return await useSanityClient().fetch(
-    groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc)`
+    groq`*[_id == "slideshow"]`
   );
 }
 
-export async function getPost(slug: string): Promise<Post> {
+export interface slideshow {
+  images: ImageAsset[];
+}
+
+// ABOUT PAGE
+export async function getAbout(): Promise<about> {
   return await useSanityClient().fetch(
-    groq`*[_type == "post" && slug.current == $slug][0]`,
-    {
-      slug,
-    }
+    groq`*[_id == "about"]`
   );
 }
 
-export interface Post {
-  _type: "post";
-  _createdAt: string;
-  title?: string;
-  slug: Slug;
-  excerpt?: string;
-  mainImage?: ImageAsset;
-  body: PortableTextBlock[];
+export interface about {
+  name: string;
+  age: string;
+  location: string;
+  favorites: PortableTextBlock[];
+  hates: PortableTextBlock[];
+  stream: PortableTextBlock[];
+  gamertags: object[];
+}
+
+// SHOUTOUTS
+export async function getShoutouts(): Promise<shoutouts> {
+  return await useSanityClient().fetch(
+    groq`*[_id == "shoutouts"]`
+  );
+}
+
+export interface shoutouts {
+  shoutouts: object[];
 }
