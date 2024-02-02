@@ -1,12 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getImages } from "../utils/sanity";
 
+import Slideshow from "../components/Slideshow.astro";
 import Navigation from "../components/Navigation.astro";
-
-const images = await getImages();
 ---
 
 <Layout title="Home">
+  <Slideshow style="margin-bottom:2em;" />
   <Navigation />
 </Layout>

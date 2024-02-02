@@ -19,6 +19,8 @@ import react from "@astrojs/react";
 // https://docs.astro.build/en/guides/server-side-rendering/#adding-an-adapter
 import netlify from "@astrojs/netlify/functions";
 
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
   // Hybrid+adapter is required to support embedded Sanity Studio
@@ -32,5 +34,5 @@ export default defineConfig({
     // `false` if you want to ensure fresh data
     apiVersion: "2023-03-20" // Set to date of setup to use the latest API version
   }), react() // Required for Sanity Studio
-  ]
+  , icon()]
 });
