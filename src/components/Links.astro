@@ -1,0 +1,82 @@
+---
+import { Icon } from "astro-icon/components";
+
+const links = {
+    "cashapp": "https://cash.app/$TheClutchess101",
+    "discord": "https://discord.gg/pwFnru96xf",
+    "facebook": "https://www.facebook.com/TheClutchess101/",
+    "instagram": "https://www.instagram.com/amybabyzs",
+    "kick": "https://www.kick.com/amybabyz",
+    "onlyfans": "https://onlyfans.com/amybabyz",
+    "paypal": "https://www.paypal.me/TheAmyBabyZ",
+    "snapchat": "https://t.snapchat.com/u4O0xXBF",
+    "throne": "https://throne.me/u/amybabyz/wishlist",
+    "tiktok": "https://www.tiktok.com/@amybabyz1",
+    "trovo": "https://trovo.live/s/AmyBabyZ",
+
+}
+---
+<section class="links">
+    <div class="gifts section">
+        <h2 class="title">Gifts & Donos</h2>
+        <ul class="list">
+            <li class="item"><a href={links.paypal} target="_blank" class="link"><Icon name="paypal" class="icon" /></a></li>
+            <li class="item"><a href={links.cashapp} target="_blank" class="link"><Icon name="cashapp" class="icon" /></a></li>
+            <li class="item"><a href={links.throne} target="_blank" class="link"><Icon name="throne" class="icon" /></a></li>
+        </ul>
+    </div>
+    <div class="social section">
+        <h2 class="title">Social Media</h2>
+        <ul class="list">
+            <li class="item"><a href={links.instagram} target="_blank" class="link"><Icon name="instagram" class="icon" /></a></li>
+            <li class="item"><a href={links.snapchat} target="_blank" class="link"><Icon name="snapchat" class="icon" /></a></li>
+            <li class="item"><a href={links.onlyfans} target="_blank" class="link"><Icon name="onlyfans" class="icon" /></a></li>
+            <li class="item"><a href={links.facebook} target="_blank" class="link"><Icon name="facebook" class="icon" /></a></li>
+            <li class="item"><a href={links.tiktok} target="_blank" class="link"><Icon name="tiktok" class="icon" /></a></li>
+        </ul>
+    </div>
+    <div class="community section">
+        <h2 class="title">Community</h2>
+        <ul class="list">
+            <li class="item"><a href={links.trovo} target="_blank" class="link"><Icon name="trovo" class="icon" /></a></li>
+            <li class="item"><a href={links.kick} target="_blank" class="link"><Icon name="kick" class="icon" /></a></li>
+            <li class="item"><a href={links.discord} target="_blank" class="link"><Icon name="discord" class="icon" /></a></li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    a {
+        color: inherit;
+    }
+
+    .links {
+        margin-top: 7vh;
+    }
+    .section {
+        border: 4px solid var(--gray);
+        margin: 5vh 7vw;
+        padding: 2vh 7vw 4vh;
+    }
+    .title {
+        color: var(--primary);
+        margin-bottom: 1em;
+    }
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 3em;
+    }
+    .icon {
+        min-height: 70px;
+        width: auto;
+        max-width: 70px;
+        color: var(--accent);
+    }
+</style>

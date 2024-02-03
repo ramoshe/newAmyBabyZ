@@ -7,7 +7,7 @@ import { getImages } from '../utils/sanity';
 const images : any = await getImages();
 // console.log(urlFor(images[0].images[0]).width(300).url());
 ---
-<div class="slideshow-container">
+<section class="slideshow-container">
     <Icon name="mdi:chevron-left" class="arrow" onclick="plusSlides(-1)" />
     <div class="images-container">
         {images ? images[0].images.map((image : any) =>
@@ -21,13 +21,13 @@ const images : any = await getImages();
         ) : null }
     </div>
     <Icon name="mdi:chevron-right" class="arrow" onclick="plusSlides(1)" />
-</div>
+</section>
 
 <style>
     .slideshow-container {
         width: 80%;
         margin: 0 auto;
-        margin-bottom: 10vh;
+        margin-bottom: 7vh;
         display: flex;
         justify-content: center;
         align-items: center;
