@@ -7,7 +7,25 @@ import Links from "../components/Links.astro";
 ---
 
 <Layout title="Home">
-  <Slideshow />
-  <Navigation />
-  <Links />
+  <div class="container">
+    <div class="column">
+      <Slideshow />
+      <Navigation />
+    </div>
+    <div class="column">
+      <Links />
+    </div>
+  </div>
 </Layout>
+
+<style>
+  @media (min-width: 1000px) {
+    .container {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .column {
+      width: 50%;
+    }
+  }
+</style>
