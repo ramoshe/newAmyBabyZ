@@ -25,7 +25,9 @@ import icon from "astro-icon";
 export default defineConfig({
   // Hybrid+adapter is required to support embedded Sanity Studio
   output: "server",
-  adapter: netlify(),
+  adapter: netlify({
+    imageCDN: false,
+  }),
   integrations: [sanity({
     projectId,
     dataset,
