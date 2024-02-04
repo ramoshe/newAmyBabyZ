@@ -1,23 +1,68 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import { urlFor } from "../utils/image";
 import { getShoutouts } from "../utils/sanity";
 
+import Layout from "../layouts/Layout.astro";
 import HomeButton from "../components/HomeButton.astro";
+import Button from "../components/Button.astro";
 
-const content = await getShoutouts();
+const content : any = await getShoutouts();
 ---
 
 <Layout title="Shoutouts">
-  <section>
-    <HomeButton />
-    <h1>Shoutouts</h1>
-    <h2>Content Coming Soon!</h2>
+  <HomeButton />
+  <section class="shoutouts">
+    {content[0].shouts.map((shout : any) =>
+      <div class="shout">
+        <Image src={urlFor(shout.image).width(200).height(200).url()} alt={shout.name} width={200} height={200} />
+        <h2 class="name">{shout.name}</h2>
+        <p class="blurb">{shout.blurb}</p>
+        <Button link={shout.link} text={shout.linktext} newtab={true} />
+      </div>
+    )}
   </section>
 </Layout>
 
 <style>
-  h1 {
-    margin-top: 2em;
+  .shoutouts {
+    margin-top: 7vh;
   }
-  h2 { color: var(--primary); }
+  .shout {
+    border: 5px solid var(--gray);
+    margin: 5vh 7vw;
+    padding: 3vh 3vw 4vh;
+  }
+  .name {
+    color: var(--primary);
+    margin-bottom: .2em;
+  }
+  .blurb {
+    margin-bottom: 2.5em;
+  }
+
+  @media (min-width: 1000px) {
+    .shoutouts {
+      margin-top: 5vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .shout {
+      margin: 2vh 2vw;
+      padding: 3vh 1.5vw 4vh;
+      width: 28%;
+    }
+  }
+  @media (min-width: 1600px) {
+    .shout {
+      margin: 2vh 1vw;
+      padding: 3vh 1vw 4vh;
+    }
+  }
+  @media (min-width: 2000px) {
+    .shout {
+      margin: 2vh .5vw
+    }
+  }
 </style>
