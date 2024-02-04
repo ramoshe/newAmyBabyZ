@@ -9,6 +9,7 @@ export default defineType({
 			name: "shouts",
 			title: "Shoutouts",
 			type: "array",
+			options: { sortable: true },
 			of: [
 				{
 					type: "object",
@@ -18,6 +19,7 @@ export default defineType({
 							name: "image",
 							type: "image",
 							title: "Image",
+							options: { hotspot: true },
 						},
 						{
 							name: "name",
@@ -28,7 +30,7 @@ export default defineType({
 							name: "blurb",
 							title: "Blurb",
 							type: "text",
-							rows: 2,
+							rows: 3,
 						},
 						{
 							name: "link",

@@ -4,20 +4,108 @@ import { getAbout } from "../utils/sanity";
 
 import HomeButton from "../components/HomeButton.astro";
 
-const content = await getAbout();
+const content : any = await getAbout();
 ---
 
 <Layout title="About">
-  <HomeButton link="/" text="Home" classes="homebtn" />
-  <section>
-    <h1>About</h1>
-    <h2>Content Coming Soon!</h2>
+  <HomeButton />
+  <section class="about">
+    <div class="section">
+      <h2 class="title">Name:</h2>
+      <p class="text">{content[0].name}</p>
+    </div>
+    <div class="section">
+      <h2 class="title">Age:</h2>
+      <p class="text">{content[0].age}</p>
+    </div>
+    <div class="section">
+      <h2 class="title">Location:</h2>
+      <p class="text">{content[0].location}</p>
+    </div>
+    <div class="section">
+      <h2 class="title">My Favorite Things:</h2>
+      <p class="text">{content[0].favorites}</p>
+    </div>
+    <div class="section">
+      <h2 class="title">Things I Hate:</h2>
+      <p class="text">{content[0].hates}</p>
+    </div>
+    <div class="section">
+      <h2 class="title">Why I Stream:</h2>
+      <p class="text">{content[0].stream}</p>
+    </div>
+    <div class="section gamertags">
+      <h2 class="title">Gamer Tags:</h2>
+      <div class="tags">
+        {content[0].gamertags.map((tag :any) =>
+        <div class="tag">
+          <h3 class="tag-title">{tag.platform}</h3>
+          <p class="tag-text">{tag.tag}</p>
+        </div>
+        )}
+      </div>
+    </div>
   </section>
 </Layout>
 
 <style>
-  h1 {
-    margin-top: 2em;
+  .about {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 12vh;
   }
-  h2 { color: var(--primary); }
+  .about::before {
+    content: "";
+    position: fixed;
+    top: 30vh;
+    left: 0;
+    background-image: url("../assets/paint2.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: -1;
+  }
+  .section {
+    border: 5px solid var(--gray);
+    background-color: var(--gray-shade);
+    margin: 3vh 7vw;
+    padding: 2vh 3vw 3vh;
+  }
+  .title {
+    color: var(--primary);
+    margin-bottom: .2em;
+  }
+
+  @media (min-width: 1000px) {
+    .about {
+      margin-top: 10vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .about::before {
+      top: 35vh;
+      height: 65vh;
+      left: auto;
+    }
+    .section {
+      margin: 2vh 1vw;
+      padding: 2vh 1vw 3vh;
+      width: 25%;
+    }
+    .gamertags {
+      width: 80%;
+    }
+    .tags {
+      display: flex;
+      justify-content: space-between;
+    }
+    .tag {
+      width: 20%;
+    }
+  }
 </style>
