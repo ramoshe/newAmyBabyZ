@@ -108,4 +108,31 @@ const content : any = await getAbout();
       width: 20%;
     }
   }
+  @media (min-height: 1100px) {
+    .about {
+      margin-top: 7vh;
+    }
+    .about::before {
+      top: 30vh;
+      height: 70vh;
+    }
+  }
+  @media (min-height: 1200px) {
+    .about {
+      margin-top: 5vh;
+    }
+    .about::before {
+      top: 25vh;
+      height: 75vh;
+    }
+  }
+  @media (min-height: 1400px) {
+    .about {
+      margin-top: 3vh;
+    }
+    .about::before {
+      top: 17vh;
+      height: 83vh;
+    }
+  }
 </style>
