@@ -50,24 +50,15 @@ const content : any = await getAbout();
 
 <style>
   .about {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 12vh;
-  }
-  .about::before {
-    content: "";
-    position: fixed;
-    top: 30vh;
-    left: 0;
+    margin-top: 5vh;
+    padding-top: 2vh;
     background-image: url("../assets/paint2.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 70vh;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    z-index: -1;
   }
   .section {
     border: 5px solid var(--gray);
@@ -82,16 +73,17 @@ const content : any = await getAbout();
 
   @media (min-width: 1000px) {
     .about {
-      margin-top: 10vh;
+      margin-top: 5vh;
+      padding-top: 2vh;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
-    .about::before {
+    /* .about::before {
       top: 35vh;
       height: 65vh;
       left: auto;
-    }
+    } */
     .section {
       margin: 2vh 1vw;
       padding: 2vh 1vw 3vh;
@@ -108,7 +100,7 @@ const content : any = await getAbout();
       width: 20%;
     }
   }
-  @media (min-height: 1100px) {
+  /* @media (min-height: 1100px) {
     .about {
       margin-top: 7vh;
     }
@@ -134,5 +126,5 @@ const content : any = await getAbout();
       top: 17vh;
       height: 83vh;
     }
-  }
+  } */
 </style>

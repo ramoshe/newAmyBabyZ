@@ -68,26 +68,48 @@ const images : any = await getImages();
 
 <script is:inline>
     let slideIndex = 0;
+    let manualControl = false;
     // showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 5000); // Change image every 2 seconds
-    }
-
     document.addEventListener('astro:page-load', (slideIndex) => {
         showSlides(slideIndex);
     }, { once: false });
+
+    // const slideTimeout = setTimeout(showSlides, 5000);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        manualControl = true;
+        changeSlides(slideIndex += n);
+        setTimeout(reautomate, 30000);
+    }
+    function changeSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+    function reautomate() {
+        manualControl = false;
+        showSlides(slideIndex);
+    }
+
+    function showSlides() {
+        if (!manualControl) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 5000);
+        } else {
+            return;
+        }
+    }
 </script>

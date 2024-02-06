@@ -24,19 +24,19 @@ export default defineType({
 			name: "favorites",
 			title: "My Favorite Things",
 			type: "text",
-			rows: 2,
+			rows: 3,
 		},
 		{
 			name: "hates",
 			title: "Things I Hate",
 			type: "text",
-			rows: 2,
+			rows: 3,
 		},
 		{
 			name: "stream",
 			title: "Why I Stream",
 			type: "text",
-			rows: 2,
+			rows: 3,
 		},
 		{
 			name: "gamertags",
