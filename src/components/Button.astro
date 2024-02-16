@@ -22,5 +22,11 @@ const { link, text, classes, newtab } = Astro.props;
         text-decoration: none;
         background-color: var(--gray-shade);
         z-index: 1;
+        transition-property: background-color, color;
+        transition-duration: .5s;
+    }
+    a:active, a:hover {
+      background-color: var(--black);
+      color: var(--accent);
     }
 </style>

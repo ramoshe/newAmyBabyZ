@@ -13,7 +13,7 @@ const links = {
     "throne": "https://throne.me/u/amybabyz/wishlist",
     "tiktok": "https://www.tiktok.com/@amybabyz1",
     "trovo": "https://trovo.live/s/AmyBabyZ",
-
+    "twitter": "https://x.com/theamybabyz"
 }
 ---
 <section class="links">
@@ -33,6 +33,7 @@ const links = {
             <li class="item"><a href={links.onlyfans} target="_blank" class="link"><Icon name="onlyfans" class="icon" /></a></li>
             <li class="item"><a href={links.facebook} target="_blank" class="link"><Icon name="facebook" class="icon" /></a></li>
             <li class="item"><a href={links.tiktok} target="_blank" class="link"><Icon name="tiktok" class="icon" /></a></li>
+            <li class="item"><a href={links.twitter} target="_blank" class="link"><Icon name="twitter" class="icon" /></a></li>
         </ul>
     </div>
     <div class="community section">
@@ -71,13 +72,16 @@ const links = {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 3em;
+        gap: 2em;
     }
     .icon {
         min-height: 70px;
         width: auto;
         max-width: 70px;
         color: var(--accent);
+    }
+    .icon:active {
+        color: var(--primary);
     }
 
     @media (min-width: 1000px) {
@@ -86,10 +90,10 @@ const links = {
         }
         .section {
             margin: 0 4vw 4vh;
-            padding: 2vh 2vw 3vh;
+            padding: 2vh 1vw 3vh;
         }
         .list {
-            gap: 2em;
+            gap: 1.5em;
         }
         .icon {
             min-height: 50px;
