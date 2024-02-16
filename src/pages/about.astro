@@ -1,9 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getAbout } from "../utils/sanity";
-
 import HomeButton from "../components/HomeButton.astro";
 
+import { getAbout } from "../utils/sanity";
 const content : any = await getAbout();
 ---
 
