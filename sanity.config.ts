@@ -19,7 +19,7 @@ if (!projectId || !dataset) {
 
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
-import { visionTool } from "@sanity/vision";
+// import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./schema";
 
 // Define the actions that should be available for singleton documents
@@ -75,7 +75,7 @@ export default defineConfig({
 						),
 					]),
 		}),
-		visionTool(),
+		// visionTool(),
 	],
 	schema: {
 		types: schemaTypes,
