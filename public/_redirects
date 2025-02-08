@@ -1,3 +1,2 @@
 # Redirects from what the browser requests to what we serve
-https://cashapp.amybabyz.com                https://cash.app/$amybabyz1
-https://ca.amybabyz.com                https://cash.app/$amybabyz1
+/cashapp                https://cash.app/$amybabyz1
