@@ -6,7 +6,7 @@ import Button from "./Button.astro";
         <Button text="About" link="/about" classes="navbtn" />
         <Button text="Shoutouts" link="/shoutouts" classes="navbtn" />
         <Button text="Merch" link="https://merch.amybabyz.com" classes="navbtn" newtab={true} />
-        <Button text="Trovians" link="https://trovians.com" classes="navbtn" newtab={true} />
+        <!-- <Button text="Trovians" link="https://trovians.com" classes="navbtn" newtab={true} /> -->
     </div>
 </nav>
 
@@ -15,9 +15,13 @@ import Button from "./Button.astro";
         padding: 1em;
         width: 100%;
         margin: 0 auto;
-        display: grid;
+        /* display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         background-image: url("../assets/paint1.png");
         background-size: cover;
         background-attachment: fixed;
@@ -29,5 +33,6 @@ import Button from "./Button.astro";
         display: flex;
         justify-content: center;
         align-items: center;
+        min-width: 40%;
     }
 </style>
